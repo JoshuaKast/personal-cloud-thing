@@ -5,6 +5,7 @@
 # Update/upgrade the rPi
 apt --assume-yes update
 apt --assume-yes upgrade
+apt --assume-yes install git emacs
 
 
 # Install Docker
@@ -20,7 +21,4 @@ docker info
 wget http://ftp.us.debian.org/debian/pool/main/libs/libseccomp/libseccomp2_2.5.1-1_armhf.deb
 dpkg -i libseccomp2_2.5.1-1_armhf.deb
 rm libseccomp2_2.5.1-1_armhf.deb
-
-# Install some useful stuff
-apt --assume-yes install emacs
 
