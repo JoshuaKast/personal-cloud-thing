@@ -15,10 +15,10 @@ RUN apt -y install nano fish npm && \
     npm install -g n && \
     n stable
 
-RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-armv7l.sh && \
+RUN wget -q https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-armv7l.sh && \
     mv Miniconda3-latest-Linux-armv7l.sh /install/Miniconda3-latest-Linux-armv7l.sh
   
-RUN bash /install/Miniconda3-latest-Linux-x86.sh -b -p
+RUN bash /install/Miniconda3-latest-Linux-armv7l.sh -b -p
 
 RUN conda install -y -c conda-forge jupyterlab jupyterlab-git
 
