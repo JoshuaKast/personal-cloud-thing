@@ -9,7 +9,8 @@ RUN apt update && \
 RUN apt -y install fish python3-pip libffi-dev && \
     pip3 install jupyter
     
-RUN apt -y install nano
+RUN apt -y install nano npm && \
+    n stable
 
 RUN pip3 install jupyterlab
 
@@ -18,5 +19,10 @@ RUN pip3 install jupyterlab-git
 RUN mkdir /root/.jupyter/
 
 COPY jupyter_notebook_config.json /root/.jupyter/jupyter_notebook_config.json
+
+COPY setup_julia.jl setup_julia.jl
+
+RUN julia setup_julia.jl && \
+    rm setup_julia.jl
 
 CMD jupyter lab --no-browser --allow-root
