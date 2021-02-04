@@ -1,0 +1,7 @@
+{
+  "NotebookApp":{
+    "token":"",
+    "allow_origin":"*",
+    "ip":"0.0.0.0"
+    }
+}
