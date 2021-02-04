@@ -15,19 +15,19 @@ RUN apt -y install nano fish npm && \
     npm install -g n && \
     n stable
 
-RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86.sh && \
-    cp Miniconda3-latest-Linux-x86.sh /install/Miniconda3-latest-Linux-x86.sh
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-armv7l.sh && \
+    cp Miniconda3-latest-Linux-armv7l.sh /install/Miniconda3-latest-Linux-armv7l.sh
   
-#RUN bash /install/Miniconda3-latest-Linux-x86.sh -b -p
+RUN bash /install/Miniconda3-latest-Linux-x86.sh -b -p
 
-#RUN conda install -y -c conda-forge jupyterlab jupyterlab-git
+RUN conda install -y -c conda-forge jupyterlab jupyterlab-git
 
 
-#COPY jupyter_notebook_config.json /root/.jupyter/jupyter_notebook_config.json
+COPY jupyter_notebook_config.json /root/.jupyter/jupyter_notebook_config.json
 
-#COPY setup_julia.jl setup_julia.jl
+COPY setup_julia.jl setup_julia.jl
 
-#RUN julia setup_julia.jl && \
-#    rm setup_julia.jl
+RUN julia setup_julia.jl && \
+    rm setup_julia.jl
 
-#CMD jupyter lab --no-browser --allow-root
+CMD jupyter lab --no-browser --allow-root
