@@ -24,7 +24,7 @@ RUN export PATH="/root/miniconda3/bin:$PATH" && \
     echo "export PATH=$PATH" > /etc/profile.d/setpath.sh && \
     echo "export PATH=$PATH" > ~/.profile
     
-RUN echo $PATH && cat /etc/profile.d/setpath.sh
+RUN echo $PATH
 
 RUN conda install -y -c conda-forge jupyterlab jupyterlab-git
 
