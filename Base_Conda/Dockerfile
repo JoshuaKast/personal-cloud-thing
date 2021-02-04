@@ -25,7 +25,8 @@ RUN export PATH="/root/miniconda3/bin:$PATH" && \
     echo "export PATH=$PATH" > ~/.profile && \
     cat ~/.profile
 
-RUN conda install -y -c conda-forge jupyterlab jupyterlab-git
+RUN export PATH="/root/miniconda3/bin:$PATH" && \
+    conda install -y -c conda-forge jupyterlab jupyterlab-git
 
 
 COPY jupyter_notebook_config.json /root/.jupyter/jupyter_notebook_config.json
