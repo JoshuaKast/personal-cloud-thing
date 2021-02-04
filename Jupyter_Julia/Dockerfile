@@ -10,6 +10,7 @@ RUN apt -y install fish python3-pip libffi-dev && \
     pip3 install jupyter
     
 RUN apt -y install nano npm && \
+    npm install -g n && \
     n stable
 
 RUN pip3 install jupyterlab
