@@ -20,6 +20,9 @@ RUN wget -q https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-armv7l.s
   
 RUN bash /install/Miniconda3-latest-Linux-armv7l.sh -b
 
+RUN export PATH="/root/miniconda3/bin:$PATH" && \
+    echo "export PATH=$PATH" > /etc/profile.d/setpath.sh
+
 RUN conda install -y -c conda-forge jupyterlab jupyterlab-git
 
 
