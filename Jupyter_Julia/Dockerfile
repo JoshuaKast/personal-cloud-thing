@@ -8,6 +8,8 @@ RUN apt update && \
     
 RUN apt -y install fish python3-pip libffi-dev && \
     pip3 install jupyter
+    
+RUN apt -y install nano
 
 RUN pip3 install jupyterlab
     
