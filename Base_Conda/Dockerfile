@@ -1,5 +1,5 @@
 
-FROM debian
+FROM debian:stable-slim
 
 EXPOSE 8888
 
