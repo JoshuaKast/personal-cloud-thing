@@ -12,6 +12,8 @@ RUN apt -y install fish python3-pip libffi-dev && \
 RUN apt -y install nano
 
 RUN pip3 install jupyterlab
+
+RUN pip3 install jupyterlab-git
     
 RUN mkdir /root/.jupyter/
 
