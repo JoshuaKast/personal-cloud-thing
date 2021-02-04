@@ -23,7 +23,7 @@ RUN bash /install/Miniconda3-latest-Linux-armv7l.sh -b
 RUN export PATH="/root/miniconda3/bin:$PATH" && \
     echo "export PATH=$PATH" > /etc/profile.d/setpath.sh
     
-RUN echo $PATH
+RUN echo $PATH && cat /etc/profile.d/setpath.sh
 
 RUN conda install -y -c conda-forge jupyterlab jupyterlab-git
 
