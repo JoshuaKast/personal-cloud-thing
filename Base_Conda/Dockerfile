@@ -3,7 +3,8 @@ FROM debian
 
 EXPOSE 8888
 
-RUN mkdir install
+RUN mkdir install && \
+    mkdir /root/.jupyter/
 
 RUN apt update && \
     apt -y upgrade && \
@@ -21,7 +22,6 @@ RUN bash /install/Miniconda3-latest-Linux-x86.sh -b -p
 
 RUN conda install -y -c conda-forge jupyterlab jupyterlab-git
 
-RUN mkdir /root/.jupyter/
 
 COPY jupyter_notebook_config.json /root/.jupyter/jupyter_notebook_config.json
 
