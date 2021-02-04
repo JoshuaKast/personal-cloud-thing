@@ -15,8 +15,8 @@ RUN apt -y install nano fish npm && \
     npm install -g n && \
     n stable
 
-RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86.sh && \\
-  cp Miniconda3-latest-Linux-x86.sh /install/Miniconda3-latest-Linux-x86.sh
+RUN wget https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-x86.sh && \
+    cp Miniconda3-latest-Linux-x86.sh /install/Miniconda3-latest-Linux-x86.sh
   
 RUN bash /install/Miniconda3-latest-Linux-x86.sh -b -p
 
