@@ -26,7 +26,7 @@ RUN export PATH="/root/anaconda3/bin:$PATH" && \
     echo "export PATH=$PATH" > ~/.profile && \
     cat ~/.profile
 
-RUN export PATH="/root/Anaconda3/bin:$PATH" && \
+RUN export PATH="/root/anaconda3/bin:$PATH" && \
     conda install -y -c conda-forge jupyterlab jupyterlab-git
 
 
