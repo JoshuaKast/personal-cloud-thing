@@ -33,7 +33,6 @@ RUN export PATH="/root/anaconda3/bin:$PATH" && \
     conda install -y -c conda-forge/label/cf202003 nodejs
 
 RUN export PATH="/root/anaconda3/bin:$PATH" && \
-    jupyter lab clean --all && \
     jupyter lab build
 
 
