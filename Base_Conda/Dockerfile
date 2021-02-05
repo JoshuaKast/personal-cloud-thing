@@ -3,8 +3,8 @@ FROM debian:stable-slim
 
 EXPOSE 8888
 
-RUN mkdir install && \
-    mkdir /root/.jupyter/
+RUN mkdir /install/ && \
+    mkdir /.jupyter/
 
 RUN apt update && \
     apt -y upgrade && \
@@ -15,17 +15,17 @@ RUN apt -y install nano fish npm && \
     npm install -g n && \
     n stable
 
-RUN wget -q https://repo.anaconda.com/miniconda/Miniconda3-latest-Linux-armv7l.sh && \
-    mv Miniconda3-latest-Linux-armv7l.sh /install/Miniconda3-latest-Linux-armv7l.sh
+RUN wget -q https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh && \
+    mv Anaconda3-2020.11-Linux-x86_64.sh /install/Anaconda3-2020.11-Linux-x86_64.sh
   
-RUN bash /install/Miniconda3-latest-Linux-armv7l.sh -b
+RUN bash /install/Anaconda3-2020.11-Linux-x86_64.sh -b 
 
-RUN export PATH="/root/miniconda3/bin:$PATH" && \
+RUN export PATH="/root/Aconda3/bin:$PATH" && \
     echo "export PATH=$PATH" > /etc/profile.d/setpath.sh && \
     echo "export PATH=$PATH" > ~/.profile && \
     cat ~/.profile
 
-RUN export PATH="/root/miniconda3/bin:$PATH" && \
+RUN export PATH="/root/Anaconda3/bin:$PATH" && \
     conda install -y -c conda-forge jupyterlab jupyterlab-git
 
 
