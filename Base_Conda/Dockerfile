@@ -37,4 +37,4 @@ COPY setup_julia.jl setup_julia.jl
 RUN julia setup_julia.jl && \
     rm setup_julia.jl
 
-CMD jupyter lab --no-browser --allow-root
+CMD /root/anaconda3/bin/jupyter lab --no-browser --allow-root
