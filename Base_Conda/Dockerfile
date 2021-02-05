@@ -28,6 +28,10 @@ RUN export PATH="/root/anaconda3/bin:$PATH" && \
 
 RUN export PATH="/root/anaconda3/bin:$PATH" && \
     conda install -y -c conda-forge jupyterlab jupyterlab-git
+    
+RUN export PATH="/root/anaconda3/bin:$PATH" && \
+    jupyter lab clean --all
+    jupyter lab build
 
 
 COPY jupyter_notebook_config.json /root/.jupyter/jupyter_notebook_config.json
