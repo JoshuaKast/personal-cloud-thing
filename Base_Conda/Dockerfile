@@ -5,7 +5,8 @@ EXPOSE 8888
 
 RUN mkdir /install/ && \
     mkdir /.jupyter/
-
+    
+# Need to replace these with "apt-get"
 RUN apt update && \
     apt -y upgrade && \
     apt -y install wget curl julia apt-utils
