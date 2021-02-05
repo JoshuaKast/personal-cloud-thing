@@ -28,7 +28,6 @@ RUN export PATH="/root/anaconda3/bin:$PATH" && \
 
 RUN export PATH="/root/anaconda3/bin:$PATH" && \
     conda install -y -c conda-forge jupyterlab jupyterlab-git
-    conda install -c conda-forge nodejs
 
 RUN export PATH="/root/anaconda3/bin:$PATH" && \
     conda install -c conda-forge nodejs
