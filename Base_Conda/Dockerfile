@@ -21,7 +21,7 @@ RUN wget -q https://repo.anaconda.com/archive/Anaconda3-2020.11-Linux-x86_64.sh 
   
 RUN bash /install/Anaconda3-2020.11-Linux-x86_64.sh -b 
 
-RUN export PATH="/root/Aconda3/bin:$PATH" && \
+RUN export PATH="/root/anaconda3/bin:$PATH" && \
     echo "export PATH=$PATH" > /etc/profile.d/setpath.sh && \
     echo "export PATH=$PATH" > ~/.profile && \
     cat ~/.profile
