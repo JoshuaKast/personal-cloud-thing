@@ -40,6 +40,8 @@ COPY jupyter_notebook_config.json /root/.jupyter/jupyter_notebook_config.json
 
 COPY setup_julia.jl setup_julia.jl
 
+RUN apt -y install libxt6 libxrender1 libxext6 libgl1-mesa-glx libqt5widgets5
+
 RUN julia setup_julia.jl && \
     rm setup_julia.jl
 
